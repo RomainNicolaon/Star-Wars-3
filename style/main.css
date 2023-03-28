@@ -45,14 +45,22 @@ header {
     width: 100%;
 }
 
-.hero-banner-title {
-    font-size: 2rem;
+.hero-banner-title{
+    font-size: 1.4rem;
     float: left;
-    margin: 1.5% 1%;
+    margin: 25px 1%;
     text-decoration: none;
+    font-family: var(--main-font);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20px;
+    transition: 0.6s;
 }
-
+.hero-banner-title:hover{
+    background-color: var(--secondary-color);
+    color: var(--accent-color-1);
+}
 .hero-right {
     float: right;
-    margin: 1.5% 2%;
+    margin: 30px 2%;
 }
