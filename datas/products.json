@@ -2,10 +2,10 @@
     "products": [
         {
             "id": 1,
-            "name": "Product 1",
-            "price": 100,
-            "description": "Product 1 description",
-            "image": "http://example.com/image1.jpg"
+            "name": "Python#1",
+            "price": 140,
+            "description": "Cours de Python, pour apprendre les bases.",
+            "image": "/images/Market/python.png"
         },
         {
             "id": 2,
