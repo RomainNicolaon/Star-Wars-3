@@ -14,3 +14,53 @@
     --accent-color-1: #D9DBDF;
     --accent-color-2: #B1F042;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-color);
+    font-family: var(--main-font);
+    font-weight: var(--main-weight);
+    font-size: var(--main-font-size);
+}
+
+.hero-banner {
+    width: 100%;
+    height: 8vh;
+}
+
+.hero-banner-content {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-bannner-logo {
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+.hero-bannner-logo img {
+    width: 60%;
+    margin: 3% 10%;
+}
+
+.hero-banner-titles {
+    height: 100%;
+    width: 100%;
+}
+
+.hero-banner-title {
+    font-size: 2rem;
+    float: left;
+    margin: 1.5% 2%;
+}
+
+.hero-right {
+    float: right;
+    margin: 1.5% 2%;
+}
