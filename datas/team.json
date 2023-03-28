@@ -2,11 +2,13 @@
     "members": [
         {
             "name": "Member 1",
-            "email": "jaaj@jaaj"
+            "email": "jaaj@jaaj",
+            "description": "Member 1 description"
         },
         {
             "name": "Member 2",
-            "email": "jaaj@jaaj"
+            "email": "jaaj@jaaj",
+            "description": "Member 2 description"
         }
     ]
 }
