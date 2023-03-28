@@ -1,0 +1,8 @@
+Inter
+
+Medium : @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); 
+         font-family: 'Inter', sans-serif;
+
+
+Bold : @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+       font-family: 'Inter', sans-serif;
