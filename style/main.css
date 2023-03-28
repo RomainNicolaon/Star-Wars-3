@@ -1,36 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 
 :root {
     --main-color: #EEF0F4;
     --main-font: 'Inter', sans-serif;
-    --main-weight: 400;
     --main-font-size: 12px;
 
     --secondary-color: #393939;
     --secondary-font: 'Inter', sans-serif;
-    --secondary-weight: 700;
-    --secondary-font-size: 12px;
 
     --accent-color-1: #D9DBDF;
     --accent-color-2: #B1F042;
-}
 
-* {
+}
+body{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
-
-body {
-    background-color: var(--main-color);
-    font-family: var(--main-font);
-    font-weight: var(--main-weight);
-    font-size: var(--main-font-size);
-}
-
-.hero-banner {
+header {
     width: 100%;
-    height: 8vh;
+    height: 100px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .hero-banner-content {
@@ -39,14 +29,15 @@ body {
 }
 
 .hero-bannner-logo {
-    width: 20%;
+    width: 250px;
     height: 100%;
     float: left;
 }
 
 .hero-bannner-logo img {
-    width: 60%;
-    margin: 3% 10%;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .hero-banner-titles {
@@ -57,7 +48,8 @@ body {
 .hero-banner-title {
     font-size: 2rem;
     float: left;
-    margin: 1.5% 2%;
+    margin: 1.5% 1%;
+    text-decoration: none;
 }
 
 .hero-right {
