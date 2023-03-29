@@ -16,7 +16,7 @@
                 <a href="market.html"><img src="../images/Logo.png" alt="logo"></a>
             </div>
             <div class="hero-banner-titles">
-                <a class="hero-banner-title" href="market.html">Produits</a>
+                <a class="hero-banner-title" href="market.php">Produits</a>
                 <a class="hero-banner-title" href="team.html">Equipe</a>
                 <a class="hero-banner-title" href="#">Support</a>
                 <a class="hero-banner-title" href="#">Feedback</a>
