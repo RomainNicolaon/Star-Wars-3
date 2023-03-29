@@ -175,3 +175,25 @@ footer {
     text-align: right;
     padding: 0 20px;
 }
+@media screen and (max-width: 768px){
+    .hero-banner-titles{
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--accent-color-2);
+        flex-direction: column;
+        z-index: 40;
+        font-weight: 700;
+    }
+    .hero-banner-titles a{
+        font-size: 30px;
+    }
+    .hero-bannner-logo img{
+        display: block;
+        position: relative;
+        z-index: 42;
+    }
+}
