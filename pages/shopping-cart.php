@@ -13,7 +13,7 @@
     <header>
         <div class="hero-banner-content">
             <div class="hero-bannner-logo">
-                <img src="../images/Logo.png" alt="logo">
+                <a href="market.html"><img src="../images/Logo.png" alt="logo"></a>
             </div>
             <div class="hero-banner-titles">
                 <a class="hero-banner-title" href="market.html">Produits</a>

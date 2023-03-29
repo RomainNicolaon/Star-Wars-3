@@ -140,3 +140,10 @@ p {
     background-color: var(--main-color);
     color: rgb(255, 0, 0);
 }
+
+.shopping-cart-separator {
+    width: 50%;
+    height: 1px;
+    background-color: black;
+    margin: 20px auto;
+}
