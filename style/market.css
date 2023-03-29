@@ -165,7 +165,6 @@ body{
     background-color: var(--accent-color-2);
     border: none;
     border-radius: 40px;
-    color: var(--main-color);
     font-weight: 700;
     font-size: 24px;
     margin-top: 5%;
@@ -174,8 +173,14 @@ body{
 }
 .drop button:hover{
     background-color: var(--main-color);
-    color: #3453da;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.drop a{
+    color: var(--main-color);
+    transition: 0.4s;
+}
+.drop button:hover a{
+    color: #3453da;
 }
 @media screen and (max-width: 1020px) {
     .titre h1{
@@ -201,9 +206,6 @@ body{
     .titre h1{
         font-size: 3rem;
         text-align: left;
-    }
-    .hero-bannner-logo img{
-        display: none;
     }
     #open{
         transform: translate(4px,0px);

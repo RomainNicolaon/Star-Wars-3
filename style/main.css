@@ -77,7 +77,6 @@ a {
         padding-top: 10px;
     }
   }
-
 footer {
     width: 100vw;
     height: 350px;
@@ -175,6 +174,7 @@ footer {
     text-align: right;
     padding: 0 20px;
 }
+<<<<<<< Updated upstream
 @media screen and (max-width: 768px){
     .hero-banner-titles{
         display: flex;
@@ -197,3 +197,5 @@ footer {
         z-index: 42;
     }
 }
+=======
+>>>>>>> Stashed changes
