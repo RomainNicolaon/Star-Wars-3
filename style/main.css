@@ -10,7 +10,7 @@
     --secondary-font: 'Inter', sans-serif;
 
     --accent-color-1: #D9DBDF;
-    --accent-color-2: #B1F042;
+    --accent-color-2: #E8B923;
 
 }
 body{
@@ -23,7 +23,6 @@ header {
     height: 100px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     background-color: var(--main-color);
-    z-index: 2;
 }
 
 .hero-banner-content {
@@ -66,4 +65,9 @@ header {
 .hero-right {
     float: right;
     margin: 30px 2%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
 }
