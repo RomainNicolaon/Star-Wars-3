@@ -29,7 +29,15 @@
         </div>
     </header>
     
-    
+    <?php
+        require('db.php');
+
+        $query = "SELECT * FROM `panier`";
+        $result = mysqli_query($con, $query) or die(mysqli_error($con));
+        $rows = mysqli_num_rows($result);
+        
+        $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    ?>
     
     
     <section class="container">
