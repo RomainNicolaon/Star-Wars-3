@@ -37,17 +37,7 @@
 		$rows = mysqli_num_rows($result);
 		
 		$result = mysqli_fetch_all($result, MYSQLI_ASSOC);
-		if(isset($_GET['send'])){
-			$product = $_GET['send'];
-			$product = array(
-				"name" => $row['name'],
-				"image" => $row['image'],
-				"description" => $row['description'],
-				"price" => $row['price'],
-				"difficulte" => $row['lvl']
-			);
-			$query = "INSERT INTO `market` (name,image,description,price,lvl) VALUES ('$product['name']','$product['image']','$product['description']','$product['description']','$product['price']','$product['lvl']') ";
-		}
+
 	?>
 	
 	
@@ -65,6 +55,21 @@
 	<section class="last_drop">
 		<div class="drop_card">
 			<?php
+
+                if(isset($_GET['send'])){
+                    $product = $_GET['send'];
+                    $product = array(
+                        "name" => $row['name'],
+                        "image" => $row['image'],
+                        "description" => $row['description'],
+                        "price" => $row['price'],
+                        "difficulte" => $row['lvl']
+                    );
+                    $query2 = "INSERT INTO `market` (name, image, description, price, lvl) VALUES ('" . $product['name'] . "', '" . $product['image'] . "', '" . $product['description'] . "', '" . $product['price'] . "', '" . $product['difficulte'] . "')";
+                    $result2 = mysqli_query($con, $query2) or die(mysqli_error($con));
+                    header("Location: market.php");
+                }
+
 				for($i = 0; $i < $rows;$i++){
                     $row = $result[$i];
                     $product = array(
@@ -86,14 +91,8 @@
                             <button class='add_card'><a href='market.php?send=". $product ."'>Add card</a></button>
                         </div>";
                 }
-		
-			
-			
 			?>
-
-				
 		</div>
 	</section>
-
 </body>
 </html>
