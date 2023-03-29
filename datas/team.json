@@ -1,11 +1,29 @@
-{
+
+
+
+
+ {
     "members": [
         {
+            "image": "/images/icon/user1.png",
             "name": "Member 1",
             "email": "jaaj@jaaj",
             "description": "Member 1 description"
         },
         {
+            "image": "/images/icon/user2.png",
+            "name": "Member 2",
+            "email": "jaaj@jaaj",
+            "description": "Member 2 description"
+        },
+        {
+            "image": "/images/icon/user3.png",
+            "name": "Member 2",
+            "email": "jaaj@jaaj",
+            "description": "Member 2 description"
+        },
+        {
+            "image": "/images/icon/user4.png",
             "name": "Member 2",
             "email": "jaaj@jaaj",
             "description": "Member 2 description"
