@@ -59,8 +59,7 @@ header {
     transition: 0.6s;
 }
 .hero-banner-title:hover{
-    background-color: var(--secondary-color);
-    color: var(--accent-color-1);
+    background-color: var(--accent-color-2);
 }
 .hero-right {
     float: right;
