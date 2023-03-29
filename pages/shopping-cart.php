@@ -48,6 +48,33 @@
                     header("Location: shopping-cart.php");
                 }
 
+                if(isset($_GET['delete'])) {
+                    $query = "DELETE FROM `panier`";
+                    $result = mysqli_query($con, $query) or die(mysqli_error($con));
+                    header("Location: shopping-cart.php");
+                }
+
+                if(isset($_GET['add'])) {
+                    $id = $_GET['add'];
+                    $query = "UPDATE `panier` SET `quantity` = `quantity` + 1 WHERE `id` = $id";
+                    $result = mysqli_query($con, $query) or die(mysqli_error($con));
+                    header("Location: shopping-cart.php");
+                }
+
+                if(isset($_GET['del'])) {
+                    $id = $_GET['del'];
+                    $query = "UPDATE `panier` SET `quantity` = `quantity` - 1 WHERE `id` = $id";
+                    $result = mysqli_query($con, $query) or die(mysqli_error($con));
+                    $query2 = "SELECT `quantity` FROM `panier` WHERE `id` = $id";
+                    $result2 = mysqli_query($con, $query2) or die(mysqli_error($con));
+                    $result2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+                    if ($result2[0]['quantity'] == 0) {
+                        $query3 = "DELETE FROM `panier` WHERE `id` = $id";
+                        $result3 = mysqli_query($con, $query3) or die(mysqli_error($con));
+                    }
+                    header("Location: shopping-cart.php");
+                }
+
                 $total_price = 0;
                 for ($i = 0; $i < $rows; $i++) {
                     $row = $result[$i];
@@ -72,7 +99,7 @@
                             <h3>Prix : " . $product['price'] . " €</h3>
                         </div>
                         <div class='product-quantity'>
-                            <h3>Quantité : " . $product['quantity'] . "</h3>
+                            <h3>Quantité : " . $product['quantity'] . "<a class='add_product' href='shopping-cart.php?add=" . $product['id'] . "'><i class='fa-solid fa-plus'></i></a><a class='del_product' href='shopping-cart.php?del=" . $product['id'] . "'><i class='fa-solid fa-minus'></i></a></h3>
                         </div>
                         <div class='product-remove'>
                             <button class='remove-article'><a href='shopping-cart.php?id=" . $product['id'] . "'>Remove</a></button>
@@ -90,8 +117,21 @@
     </section>
 
     <section class="checkout">
-        <h2 class="total-price">Prix total : <?php echo $total_price ?></h2>
-        <button class="checkout-button">Commander</button>
+        <?php 
+            if ($total_price > 0 && $total_price < 50) {
+                echo "<h2 class='total-price green'>Prix total : " . $total_price . " €</h2>";
+                echo "<button class='checkout-button'>Commander</button>";
+                echo "<button class='delete-button'><a href='shopping-cart.php?delete=1'>Vider le panier</a></button>";
+            } else if ($total_price > 50 && $total_price < 75) {
+                echo "<h2 class='total-price orange'>Prix total : " . $total_price . " €</h2>";
+                echo "<button class='checkout-button'>Commander</button>";
+                echo "<button class='delete-button'><a href='shopping-cart.php?delete=1'>Vider le panier</a></button>";
+            } else if ($total_price > 75) {
+                echo "<h2 class='total-price red'>Prix total : " . $total_price . " €</h2>";
+                echo "<button class='checkout-button'>Commander</button>";
+                echo "<button class='delete-button'><a href='shopping-cart.php?delete=1'>Vider le panier</a></button>";
+            }
+        ?>
     </section>
 
     <footer>

@@ -125,13 +125,30 @@ p {
     color: #fff;
 }
 
+.delete-button {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border: solid 1px rgb(250, 67, 67);
+    color: rgb(250, 67, 67);
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.delete-button:hover {
+    background-color: rgb(250, 67, 67);
+    color: #fff;
+}
+
 .remove-article {
     width: 200px;
     height: 50px;
     border-radius: 5px;
     border: none;
     background-color: rgb(250, 67, 67);
-    color: var(--main-color);
+    color: #fff;
     font-size: 18px;
     cursor: pointer;
     font-weight: 600;
@@ -149,3 +166,46 @@ p {
     margin: 20px auto;
 }
 
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.orange {
+    color: orange;
+}
+
+.add_product {
+    border-radius: 5px;
+    border: solid 1px #2965f1;
+    color: #3b49df;
+    font-size: 22px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 10px 10px;
+    padding: 5px 10px;
+}
+
+.add_product:hover {
+    background-color: #2965f1;
+    color: #fff;
+}
+
+.del_product {
+    border-radius: 5px;
+    border: solid 1px rgb(250, 67, 67);
+    color: rgb(250, 67, 67);
+    font-size: 22px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 10px 10px;
+    padding: 5px 10px;
+}
+
+.del_product:hover {
+    background-color: rgb(250, 67, 67);
+    color: #fff;
+}
