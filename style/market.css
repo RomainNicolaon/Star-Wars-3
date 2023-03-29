@@ -189,9 +189,6 @@ body{
     }
   }
 @media screen and (max-width: 768px) {
-    .hero-banner-title{
-        display: none;
-    }
     .container{
         height: 110vh;
     }
@@ -204,5 +201,15 @@ body{
     .titre h1{
         font-size: 3rem;
         text-align: left;
+    }
+    .hero-bannner-logo img{
+        display: none;
+    }
+    #open{
+        transform: translate(4px,0px);
+    }
+    #close{
+        transform: translateY(-200px);
+        transition: 1s ease-in-out;
     }
   }
