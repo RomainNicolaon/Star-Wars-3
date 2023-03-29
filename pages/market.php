@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../style/main.css">
 	<link rel="stylesheet" href="../style/market.css">
+	<script src="../script/main.js"></script>
 	<title>FastDev</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
 				<img src="../images/Logo.png" alt="logo">
 			</div>
 			<div class="menu">
-				<i class="fa-solid fa-bars" id="open"></i>
+				<i class="fa-solid fa-bars" id="open" onclick="navbar_open()"></i>
 				<i class="fa-solid fa-xmark" id="close"></i>
 			</div>
 			<div class="hero-banner-titles">
@@ -47,12 +48,12 @@
 			<h1>de formation</h1>
 			<h1>en ligne</h1>
 			<p>Plus de 400 formations en ligne, les prix les abordables du marché !</p>
-			<button>Commencer<i class="fa-solid fa-arrow-right"></i></button>
+			<a href="#section2" class="button">Commencer<i class="fa-solid fa-arrow-right"></i></a>
 		</div>
 		<img src="../images/Market/main.png">
 	</section>
 
-	<section class="last_drop">
+	<section class="last_drop" id="section2">
 		<div class="drop_card">
 			<?php
 

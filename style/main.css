@@ -174,7 +174,6 @@ footer {
     text-align: right;
     padding: 0 20px;
 }
-<<<<<<< Updated upstream
 @media screen and (max-width: 768px){
     .hero-banner-titles{
         display: flex;
@@ -187,6 +186,7 @@ footer {
         flex-direction: column;
         z-index: 40;
         font-weight: 700;
+        transform: translateY(-1000px);
     }
     .hero-banner-titles a{
         font-size: 30px;
@@ -197,5 +197,3 @@ footer {
         z-index: 42;
     }
 }
-=======
->>>>>>> Stashed changes
