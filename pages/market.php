@@ -54,7 +54,7 @@
     <section class="last_drop">
         <div class="drop_card">
             <?php
-                for($i;i<$rows;$i++){
+                for($i = 0; $i < $rows;$i++){
                     $row = $result[$i];
                     $product = array(
                         "name" => $row['name'],
@@ -63,16 +63,17 @@
                         "price" => $row['price'],
                         "difficulte" => $row["lvl"]
                     );
+
                     echo "<div class='drop'>
-                        <img src='"  $product['image'] . "' alt ='" . $product['name'] . "'>
-                        <p>" . $product['difficulte'] . "</p>
-                        <h2>. $product['name'] .</h2>
-                        <p>$product['description']</p>
-                        <div class="price">
-                            <p>140$</p>
-                        </div>
-                        <button>Add card</button>
-                </div>"
+                            <img src='" . $product['image'] . "' alt ='" . $product['name'] . "'>
+                            <p>" . $product['difficulte'] . "</p>
+                            <h2>" . $product['name'] . "</h2>
+                            <p>" . $product['description'] . "</p>
+                            <div class='price'>
+                                <p>140$</p>
+                            </div>
+                            <button>Add card</button>
+                        </div>";
                 }
         
             
