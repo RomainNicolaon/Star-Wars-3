@@ -81,6 +81,10 @@
 
                     $total_price += $product['price'] * $product['quantity'];
                 }
+
+                if ($rows == 0) {
+                    echo "<h2>Votre panier est vide.</h2>";
+                }
             ?>
         </section>
     </section>
@@ -90,6 +94,21 @@
         <button class="checkout-button">Commander</button>
     </section>
 
-    <script src="/script/shopping-cart.js"></script>
+    <footer>
+        <div class="hero-footer-top-content">
+            <div class="hero-footer-logo">
+                <a href="market.html"><img src="../images/Logo.png" alt="logo"></a>
+            </div>
+            <div class="hero-footer-contact">
+                <div class="full-button">
+                    <input type="text" placeholder="Entrez votre email">
+                    <button>S'abonner</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-footer-botttom-content">
+            <p>© 2023 Cefim. Tous droits réservés.</p>
+        </div>
+    </footer>
 </body>
 </html>
