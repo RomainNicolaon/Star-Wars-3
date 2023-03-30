@@ -13,6 +13,8 @@
     --accent-color-2: #f5a904;
 
 }
+@-webkit-keyframes scale-in-top{0%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:50% 0;transform-origin:50% 0;opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 0;transform-origin:50% 0;opacity:1}}@keyframes scale-in-top{0%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:50% 0;transform-origin:50% 0;opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 0;transform-origin:50% 0;opacity:1}}
+@-webkit-keyframes scale-in-left{0%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:0 50%;transform-origin:0 50%;opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:0 50%;transform-origin:0 50%;opacity:1}}@keyframes scale-in-left{0%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:0 50%;transform-origin:0 50%;opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:0 50%;transform-origin:0 50%;opacity:1}}
 html{
     scroll-behavior: smooth;
     height: 100%;
@@ -44,6 +46,8 @@ body{
 .titre h1{
     font-size: 5rem;
     margin: 0;
+    animation-name: scale-in-left;
+    animation-duration: 3s;
 }
 .titre h1 a{
     color: var(--accent-color-2);
@@ -54,6 +58,8 @@ body{
     font-size: 1.4rem;
     width: 80%;
     color: #8A8A8A;
+    animation-name: scale-in-left;
+    animation-duration: 3s;
 }
 .button{
     display: flex;
@@ -71,6 +77,8 @@ body{
     transition: 0.6s;
     gap: 10px;
     cursor: pointer;
+    animation-name: scale-in-left;
+    animation-duration: 3s;
 }
 .button:hover{
     background-color: var(--accent-color-1);
@@ -81,6 +89,8 @@ body{
     height: 70%;
     border-radius: 60px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    animation-name: scale-in-top;
+    animation-duration: 3s;
 }
 .menu{
     position: absolute;
