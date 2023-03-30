@@ -49,9 +49,12 @@
                 }
 
                 if(isset($_GET['delete'])) {
-                    $query = "DELETE FROM `panier`";
-                    $result = mysqli_query($con, $query) or die(mysqli_error($con));
-                    header("Location: shopping-cart.php");
+                    $delete = $_GET['delete'];
+                    if ($delete == 1) {
+                        $query = "DELETE FROM `panier` WHERE 1";
+                        $result = mysqli_query($con, $query) or die(mysqli_error($con));
+                        header("Location: shopping-cart.php");
+                    }
                 }
 
                 if(isset($_GET['add'])) {
@@ -118,15 +121,15 @@
 
     <section class="checkout">
         <?php 
-            if ($total_price > 0 && $total_price < 50) {
+            if ($total_price > 0 && $total_price <= 50) {
                 echo "<h2 class='total-price green'>Prix total : " . $total_price . " €</h2>";
                 echo "<button class='checkout-button'>Commander</button>";
                 echo "<button class='delete-button'><a href='shopping-cart.php?delete=1'>Vider le panier</a></button>";
-            } else if ($total_price > 50 && $total_price < 75) {
+            } else if ($total_price > 51 && $total_price <= 75) {
                 echo "<h2 class='total-price orange'>Prix total : " . $total_price . " €</h2>";
                 echo "<button class='checkout-button'>Commander</button>";
                 echo "<button class='delete-button'><a href='shopping-cart.php?delete=1'>Vider le panier</a></button>";
-            } else if ($total_price > 75) {
+            } else if ($total_price > 76) {
                 echo "<h2 class='total-price red'>Prix total : " . $total_price . " €</h2>";
                 echo "<button class='checkout-button'>Commander</button>";
                 echo "<button class='delete-button'><a href='shopping-cart.php?delete=1'>Vider le panier</a></button>";
