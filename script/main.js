@@ -1,5 +1,3 @@
-let open = document.getElementById("open")
-let close = document.getElementById("close")
-function navbar(){
-    
+function navbar_open(){
+    console.log("Marche")
 }

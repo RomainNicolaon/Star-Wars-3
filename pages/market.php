@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../style/main.css">
 	<link rel="stylesheet" href="../style/market.css">
+	<script src="../script/main.js"></script>
 	<title>FastDev</title>
 </head>
 <body>
@@ -16,15 +17,15 @@
 				<img src="../images/Logo.png" alt="logo">
 			</div>
 			<div class="menu">
-				<i class="fa-solid fa-bars" id="open"></i>
+				<i class="fa-solid fa-bars" id="open" onclick="navbar_open()"></i>
 				<i class="fa-solid fa-xmark" id="close"></i>
 			</div>
 			<div class="hero-banner-titles">
-				<a class="hero-banner-title">Produits</a>
-				<a class="hero-banner-title">Equipe</a>
+				<a class="hero-banner-title" href="../pages/market.php">Produits</a>
+				<a class="hero-banner-title" href="../pages/team.html">Equipe</a>
 				<a class="hero-banner-title">Support</a>
 				<a class="hero-banner-title">Feedback</a>
-				<a class="hero-banner-title hero-right"><i class="fa-solid fa-bag-shopping"></i></a>
+				<a class="hero-banner-title hero-right"href="../pages/shopping-cart.php"><i class="fa-solid fa-bag-shopping"></i></a>
 			</div>
 		</div>
 	</header>
@@ -47,12 +48,12 @@
 			<h1>de formation</h1>
 			<h1>en ligne</h1>
 			<p>Plus de 400 formations en ligne, les prix les abordables du marché !</p>
-			<button>Commencer<i class="fa-solid fa-arrow-right"></i></button>
+			<a href="#section2" class="button">Commencer<i class="fa-solid fa-arrow-right"></i></a>
 		</div>
 		<img src="../images/Market/main.png">
 	</section>
 
-	<section class="last_drop">
+	<section class="last_drop" id="section2">
 		<div class="drop_card">
 			<?php
 
@@ -88,7 +89,7 @@
                             <div class='price'>
                                 <p>" . $product['price'] . "$</p>
                             </div>
-                            <button class='add_card'><a href='market.php?send=". $product ."'>Add card</a></button>
+                            <button class='add_card'><a href='market.php?send=". urlencode(json_encode($product)) ."'>Add card</a></button>
                         </div>";
                 }
 			?>
