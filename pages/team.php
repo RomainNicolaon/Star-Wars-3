@@ -43,7 +43,7 @@ for ($i = 0; $i < $rows2; $i++) {
 			</div>
 			<div class="hero-banner-titles">
 				<a class="hero-banner-title" href="../pages/market.php">Produits</a>
-				<a class="hero-banner-title" href="../pages/team.html">Equipe</a>
+				<a class="hero-banner-title" href="../pages/team.php">Equipe</a>
 				<a class="hero-banner-title">Support</a>
 				<a class="hero-banner-title">Feedback</a>
 				<a class="hero-banner-title hero-right"href="../pages/shopping-cart.php"><i class="fa-solid fa-bag-shopping"></i></a>
