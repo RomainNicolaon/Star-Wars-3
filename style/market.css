@@ -191,17 +191,19 @@ body{
     margin-top: 5%;
     cursor: pointer;
     transition: 0.4s;
+    
 }
 .drop button:hover{
     background-color: var(--main-color);
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    color: #3453da;
 }
 .drop a{
     color: var(--main-color);
     transition: 0.4s;
     width: 100%;
 }
-.drop button:hover a{
+.drop a:hover {
     color: #3453da;
 }
 footer{
