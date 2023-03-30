@@ -8,6 +8,8 @@
     <title>Super Team</title>
     <link rel="stylesheet" href="/style/main.css">
     <link rel="stylesheet" href="/style/team.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">  
+
 </head>
 
 <body>
@@ -29,34 +31,84 @@
         <div class="barreTeam">
             <h1 class="equipe-title">La Team</h1>
             <div class="buttons">
-                <button type="submit" class="button_add" onclick="addMember()"><img src="">Ajouter</button>
-                
+                <button type="submit" id="button_add">Ajouter<i class="fa-solid fa-plus"></i></button>
+
             </div>
         </div>
         <div class="equipe-membre">
 
-                       
+
         </div>
 
-       
+
     </section>
 
-    
-        
-            <form class="hidden" action=".ficheMembre" method="post">
-                <label for="name">Nom :</label>
-                <input type="text" id="name" name="user_name">
-
-                <button type="submit" class="buttonForm"
-            </form>
-       
 
 
+    <div class="containerForm">
+    <form id="hidden" action=".ficheMembre" method="post">
+        <div class="contenuForm">
+            <h2>Informations</h2>
+
+            <input type="text" id="name" name="user_name" placeholder="Prénom">
+            <input type="email" id="email" name="user_email" placeholder="Email">
+            <input type="text" id="description" placeholder="Description">
 
 
-   
+            <div id="radioAvatar">
+
+                <div class="image-container">
+                    <input type="radio" id="imageProfile1" name="radioChoice" value="/images/icon/user1.png">
+                    <label for="imageProfile1"><img src="/images/icon/user1.png" class="iconRadio" alt="user1"></label>
+                </div>
+                <div class="image-container">
+                    <input type="radio" id="imageProfile3" name="radioChoice" value="/images/icon/user3.png">
+                    <label for="imageProfile3"><img src="/images/icon/user3.png" class="iconRadio" alt="user3"></label>
+                </div>
+                <div class="image-container">
+                    <input type="radio" id="imageProfile4" name="radioChoice" value="/images/icon/user4.png">
+                    <label for="imageProfile4"><img src="/images/icon/user4.png" class="iconRadio" alt="user4"></label>
+                </div>
+                <div class="image-container">
+                    <input type="radio" id="imageProfile6" name="radioChoice" value="/images/icon/user6.png">
+                    <label for="imageProfile6"><img src="/images/icon/user6.png" class="iconRadio" alt="user6"></label>
+                </div>
+                <div class="image-container">
+
+                    <input type="radio" id="imageProfile7" name="radioChoice" value="/images/icon/user7.png">
+                    <label for="imageProfile7"><img src="/images/icon/user7.png" class="iconRadio" alt="user7"></label>
+                </div>
+                <div class="image-container">
+                    <input type="radio" id="imageProfile10" name="radioChoice" value="/images/icon/user10.png">
+                    <label for="imageProfile10"><img src="/images/icon/user10.png" class="iconRadio" alt="user10"></label>
+                </div>
+            </div>
+
+            <button type="button" class="buttonForm" onclick="addMember()">Bienvenue <i class="fa-solid fa-check"></i></button>
+        </div>
+    </div>
+    </form>
+
+
+
+
+
+
     <footer>
-
+        <div class="hero-footer-top-content">
+            <div class="hero-footer-logo">
+                <a href="market.html"><img src="../images/Logo.png" alt="logo"></a>
+            </div>
+            <div class="hero-footer-contact">
+                <div class="full-button">
+                    <input type="text" placeholder="Entrez votre email">
+                    <button>S'abonner</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-footer-botttom-content">
+            <p>© 2023 Cefim. Tous droits réservés.</p>
+        </div>
     </footer>
     <script src="/script/team.js"></script>
 </body>
