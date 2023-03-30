@@ -182,11 +182,12 @@ footer {
         align-items: center;
         width: 100vw;
         height: 100vh;
-        background-color: var(--accent-color-2);
+        background-color: var(--accent-color-1);
         flex-direction: column;
         z-index: 40;
         font-weight: 700;
         transform: translateY(-1000px);
+        transition: 1s ease-in-out;
     }
     .hero-banner-titles a{
         font-size: 30px;
@@ -276,10 +277,14 @@ footer {
     }
 
     .hero-footer-botttom-content p{
-        color: var(--secondary-color);
+        color: var(--main-color);
         font-size: 16px;
         font-weight: 600;
         text-align: right;
         padding: 0 20px;
+    }
+    .hero-banner-title{
+        color: #000000;
+        font-size: 40%;
     }
 }
