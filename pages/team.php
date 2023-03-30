@@ -137,6 +137,7 @@ for ($i = 0; $i < $rows2; $i++) {
         </div>
     </footer>
     <script src="../script/team.js"></script>
+    <script src="../script/main.js"></script>
 </body>
 
 
