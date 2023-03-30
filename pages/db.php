@@ -8,3 +8,5 @@
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
 ?>
+
+<!-- lien db : https://auth-db926.hstgr.io/index.php?db=u944545200_cefim -->
