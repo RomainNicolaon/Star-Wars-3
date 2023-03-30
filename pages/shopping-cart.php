@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/6cba33bc0d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/shopping-cart.css">
+    <link rel="icon" href="../images/fav-icon.png">
 </head>
 <body>
     <?php
