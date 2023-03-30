@@ -7,7 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../style/main.css">
 	<link rel="stylesheet" href="../style/market.css">
-	<script src="../script/main.js"></script>
 	<title>FastDev</title>
 </head>
 <body>
@@ -18,7 +17,7 @@
 			</div>
 			<div class="menu">
 				<i class="fa-solid fa-bars" id="open" onclick="navbar_open()"></i>
-				<i class="fa-solid fa-xmark" id="close"></i>
+				<i class="fa-solid fa-xmark" id="close" onclick="navbar_close()"></i>
 			</div>
 			<div class="hero-banner-titles">
 				<a class="hero-banner-title" href="../pages/market.php">Produits</a>
@@ -110,6 +109,7 @@
         <div class="hero-footer-botttom-content">
             <p>© 2023 Cefim. Tous droits réservés.</p>
         </div>
-    </footer>
+	</footer>
+	<script src="../script/main.js"></script>
 </body>
 </html>
