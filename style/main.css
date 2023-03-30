@@ -18,7 +18,6 @@ body{
     padding: 0;
 }
 header {
-     
     width: 100%;
     height: 100px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -70,13 +69,15 @@ a {
     text-decoration: none;
     color: var(--secondary-color);
 }
+
 @media screen and (max-width: 900px) {
     .hero-banner-title{
         font-size: 1.2rem;
         padding: 2px;
         padding-top: 10px;
     }
-  }
+}
+
 footer {
     width: 100%;
     height: 350px;
@@ -173,7 +174,7 @@ footer {
     text-align: right;
     padding: 0 20px;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 830px){
     .hero-banner-titles{
         display: flex;
         position: fixed;
@@ -194,5 +195,91 @@ footer {
         display: block;
         position: relative;
         z-index: 42;
+    }
+
+    .hero-footer-top-content{
+        flex-direction: column;
+    }
+
+    .hero-footer-logo{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        margin: 0;
+        padding: 30px;
+    }
+
+    .hero-footer-logo img{
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .hero-footer-contact{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 30px;
+    }
+
+    .full-button{
+        width: 100%;
+        height: 80px;
+        border-radius: 10px;
+        border: none;
+        color: #747474;
+        font-size: 18px;
+        cursor: pointer;
+        font-weight: 600;
+        float: left;
+    }
+
+    .full-button input{
+        width: 70%;
+        height: 100%;
+        border-radius: 60px 0 0 60px;
+        border: none;
+        color: #000000;
+        font-size: 18px;
+        cursor: text;
+        font-weight: 600;
+        float: left;
+        padding: 0 20px;
+    }
+
+    .full-button input:focus{
+        outline: none;
+    }
+
+    .full-button button{
+        width: 30%;
+        height: 100%;
+        border-radius: 60px 60px 60px 60px;
+        border: none;
+        color: white;
+        background-color: #000000;
+        font-size: 18px;
+        cursor: pointer;
+        font-weight: 600;
+        float: left;
+        margin: 0 0 0 -50px;
+    }
+
+    .hero-footer-botttom-content{
+        width: 100%;
+        height: 20%;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .hero-footer-botttom-content p{
+        color: var(--secondary-color);
+        font-size: 16px;
+        font-weight: 600;
+        text-align: right;
+        padding: 0 20px;
     }
 }
