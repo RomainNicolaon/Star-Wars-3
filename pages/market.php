@@ -95,5 +95,21 @@
 			?>
 		</div>
 	</section>
+	<footer>
+        <div class="hero-footer-top-content">
+            <div class="hero-footer-logo">
+                <a href="market.html"><img src="../images/Logo.png" alt="logo"></a>
+            </div>
+            <div class="hero-footer-contact">
+                <div class="full-button">
+                    <input type="text" placeholder="Entrez votre email">
+                    <button>S'abonner</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-footer-botttom-content">
+            <p>© 2023 Cefim. Tous droits réservés.</p>
+        </div>
+    </footer>
 </body>
 </html>
