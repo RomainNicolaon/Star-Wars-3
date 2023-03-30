@@ -30,6 +30,7 @@
 	</header>
 	
 	<?php
+
 		require('db.php');
 
 		$query = "SELECT * FROM `market`";
@@ -37,6 +38,21 @@
 		$rows = mysqli_num_rows($result);
 		
 		$result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+		if(isset($_GET['send_values'])){
+			$query2 = "SELECT * FROM `panier`";
+			$result2 = mysqli_query($con, $query2) or die(mysqli_error($con));
+			$rows2 = mysqli_num_rows($result2);
+			$product = $_GET['send_values'];
+			$product = explode("°", $product);
+			$name = $product[0];
+			$image = $product[1];
+			$price = $product[2];
+
+			$query3 = "INSERT `panier`(`name`, `image`, `price`, `quantity`) VALUES ('$name', '$image', '$price', '1') ON DUPLICATE KEY UPDATE quantity = quantity + 1";
+			$result3 = mysqli_query($con, $query3) or die(mysqli_error($con));
+			header("Location: market.php");
+		}
 
 	?>
 	
@@ -56,20 +72,6 @@
 		<div class="drop_card">
 			<?php
 
-                if(isset($_GET['send'])){
-                    $product = $_GET['send'];
-                    $product = array(
-                        "name" => $row['name'],
-                        "image" => $row['image'],
-                        "description" => $row['description'],
-                        "price" => $row['price'],
-                        "difficulte" => $row['lvl']
-                    );
-                    $query2 = "INSERT INTO `market` (name, image, description, price, lvl) VALUES ('" . $product['name'] . "', '" . $product['image'] . "', '" . $product['description'] . "', '" . $product['price'] . "', '" . $product['difficulte'] . "')";
-                    $result2 = mysqli_query($con, $query2) or die(mysqli_error($con));
-                    header("Location: market.php");
-                }
-
 				for($i = 0; $i < $rows;$i++){
                     $row = $result[$i];
                     $product = array(
@@ -80,16 +82,19 @@
                         "difficulte" => $row["lvl"]
                     );
 
+					$send_values = $product['name'] . "°" . $product['image'] . "°" . $product['price'];
+
                     echo "<div class='drop'>
                             <img src='" . $product['image'] . "' alt ='" . $product['name'] . "'>
                             <p>" . $product['difficulte'] . "</p>
                             <h2>" . $product['name'] . "</h2>
                             <p>" . $product['description'] . "</p>
                             <div class='price'>
-                                <p>" . $product['price'] . "$</p>
+                                <p>" . $product['price'] . " €</p>
                             </div>
-                            <button class='add_card'><a href='market.php?send=". urlencode(json_encode($product)) ."'>Add card</a></button>
-                        </div>";
+                            <a href='market.php?send_values=" . $send_values . "' class='button'>Ajouter au panier<i class='fa-solid fa-arrow-right'></i></a>
+						</div>";
+
                 }
 			?>
 		</div>

@@ -105,7 +105,7 @@
                             <h3>Quantité : " . $product['quantity'] . "<a class='add_product' href='shopping-cart.php?add=" . $product['id'] . "'><i class='fa-solid fa-plus'></i></a><a class='del_product' href='shopping-cart.php?del=" . $product['id'] . "'><i class='fa-solid fa-minus'></i></a></h3>
                         </div>
                         <div class='product-remove'>
-                            <button class='remove-article'><a href='shopping-cart.php?id=" . $product['id'] . "'>Remove</a></button>
+                        <a href='shopping-cart.php?id=" . $product['id'] . "'><button class='remove-article'>Remove</button></a>
                         </div>
                     </div>";
 
@@ -121,7 +121,13 @@
 
     <section class="checkout">
         <?php 
-            if ($total_price > 0 && $total_price <= 50) {
+            if ($total_price == 0) {
+                if ($rows != 0) {
+                    echo "<h2 class='total-price'>Prix total : Gratuit</h2>";
+                    echo "<button class='checkout-button'>Commander</button>";
+                }
+            }
+            else if ($total_price >= 1 && $total_price <= 50) {
                 echo "<h2 class='total-price green'>Prix total : " . $total_price . " €</h2>";
                 echo "<button class='checkout-button'>Commander</button>";
                 echo "<button class='delete-button'><a href='shopping-cart.php?delete=1'>Vider le panier</a></button>";
