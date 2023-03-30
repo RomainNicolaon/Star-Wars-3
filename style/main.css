@@ -13,6 +13,12 @@
     --accent-color-2: #e7a108;
 
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 body{
     margin: 0;
     padding: 0;
@@ -96,9 +102,9 @@ footer {
 
 .hero-footer-logo {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     display: flex;
-    margin: 0;
+    margin: -100px 0 0 0;
     padding: 30px;
 }
 
@@ -286,5 +292,11 @@ footer {
     .hero-banner-title{
         color: #000000;
         font-size: 40%;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .full-button input::placeholder{
+        font-size: 70%;
     }
 }
