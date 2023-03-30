@@ -19,7 +19,7 @@
         $rows = mysqli_num_rows($result);
 
         $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        
+
         $query2 = "SELECT `quantity` FROM `panier`";
 		$result2 = mysqli_query($con, $query2) or die(mysqli_error($con));
 		$rows2 = mysqli_num_rows($result2);
@@ -116,7 +116,7 @@
                             <h3>Quantité : " . $product['quantity'] . "<a class='add_product' href='shopping-cart.php?add=" . $product['id'] . "'><i class='fa-solid fa-plus'></i></a><a class='del_product' href='shopping-cart.php?del=" . $product['id'] . "'><i class='fa-solid fa-minus'></i></a></h3>
                         </div>
                         <div class='product-remove'>
-                        <a href='shopping-cart.php?id=" . $product['id'] . "'><button class='remove-article'>Remove</button></a>
+                        <a href='shopping-cart.php?id=" . $product['id'] . "'><button class='remove-article'>Remove <i class='fa-solid fa-trash'></i></button></a>
                         </div>
                     </div>";
 
