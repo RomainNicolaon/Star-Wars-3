@@ -76,6 +76,20 @@ a {
     color: var(--secondary-color);
 }
 
+.red_bubble {
+    width: 25px;
+    height: 25px;
+    background-color: var(--accent-color-2);
+    border-radius: 50%;
+    float: right;
+    margin: 30px -2.5%;
+    font-family: var(--main-font);
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 25px;
+    color: var(--main-color);
+}
+
 @media screen and (max-width: 900px) {
     .hero-banner-title{
         font-size: 1.2rem;

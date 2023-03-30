@@ -10,6 +10,39 @@
 	<title>FastDev</title>
 </head>
 <body>
+	<?php
+
+		require('db.php');
+
+		$query = "SELECT * FROM `market`";
+		$result = mysqli_query($con, $query) or die(mysqli_error($con));
+		$rows = mysqli_num_rows($result);
+
+		$result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+		$query2 = "SELECT `quantity` FROM `panier`";
+		$result2 = mysqli_query($con, $query2) or die(mysqli_error($con));
+		$rows2 = mysqli_num_rows($result2);
+
+		$total_products = 0;
+		for ($i = 0; $i < $rows2; $i++) {
+			$total_products += mysqli_fetch_array($result2)[0];
+		}
+
+		if(isset($_GET['send_values'])){
+			
+			$product = $_GET['send_values'];
+			$product = explode("°", $product);
+			$name = $product[0];
+			$image = $product[1];
+			$price = $product[2];
+
+			$query3 = "INSERT `panier`(`name`, `image`, `price`, `quantity`) VALUES ('$name', '$image', '$price', '1') ON DUPLICATE KEY UPDATE quantity = quantity + 1";
+			$result3 = mysqli_query($con, $query3) or die(mysqli_error($con));
+			header("Location: market.php");
+		}
+
+	?>
 	<header>
 		<div class="hero-banner-content">
 			<div class="hero-bannner-logo">
@@ -25,36 +58,12 @@
 				<a class="hero-banner-title">Support</a>
 				<a class="hero-banner-title">Feedback</a>
 				<a class="hero-banner-title hero-right"href="../pages/shopping-cart.php"><i class="fa-solid fa-bag-shopping"></i></a>
+				<div class="red_bubble"><?php echo $total_products ?></div>
+				
+
 			</div>
 		</div>
 	</header>
-	
-	<?php
-
-		require('db.php');
-
-		$query = "SELECT * FROM `market`";
-		$result = mysqli_query($con, $query) or die(mysqli_error($con));
-		$rows = mysqli_num_rows($result);
-		
-		$result = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-		if(isset($_GET['send_values'])){
-			$query2 = "SELECT * FROM `panier`";
-			$result2 = mysqli_query($con, $query2) or die(mysqli_error($con));
-			$rows2 = mysqli_num_rows($result2);
-			$product = $_GET['send_values'];
-			$product = explode("°", $product);
-			$name = $product[0];
-			$image = $product[1];
-			$price = $product[2];
-
-			$query3 = "INSERT `panier`(`name`, `image`, `price`, `quantity`) VALUES ('$name', '$image', '$price', '1') ON DUPLICATE KEY UPDATE quantity = quantity + 1";
-			$result3 = mysqli_query($con, $query3) or die(mysqli_error($con));
-			header("Location: market.php");
-		}
-
-	?>
 	
 	
 	<section class="container">
@@ -84,7 +93,8 @@
 
 					$send_values = $product['name'] . "°" . $product['image'] . "°" . $product['price'];
 
-                    echo "<div class='drop'>
+					if ($total_products <= 15) {
+						echo "<div class='drop'>
                             <img src='" . $product['image'] . "' alt ='" . $product['name'] . "'>
                             <p>" . $product['difficulte'] . "</p>
                             <h2>" . $product['name'] . "</h2>
@@ -94,7 +104,20 @@
                             </div>
                             <a href='market.php?send_values=" . $send_values . "' class='button'>Ajouter au panier<i class='fa-solid fa-arrow-right'></i></a>
 						</div>";
+					} else {
+						echo "<div class='drop'>
+                            <img src='" . $product['image'] . "' alt ='" . $product['name'] . "'>
+                            <p>" . $product['difficulte'] . "</p>
+                            <h2>" . $product['name'] . "</h2>
+                            <p>" . $product['description'] . "</p>
+                            <div class='price'>
+                                <p>" . $product['price'] . " €</p>
+                            </div>
+                            <a class='button' style='text-align: center;'>Trop d'articles dans le panier !</a>
+						</div>";
+					}
 
+                    
                 }
 			?>
 		</div>

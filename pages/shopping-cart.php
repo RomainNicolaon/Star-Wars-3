@@ -10,6 +10,26 @@
     <link rel="stylesheet" href="../style/shopping-cart.css">
 </head>
 <body>
+    <?php
+
+        require('db.php');
+
+        $query = "SELECT * FROM `panier`";
+        $result = mysqli_query($con, $query) or die(mysqli_error($con));
+        $rows = mysqli_num_rows($result);
+
+        $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        
+        $query2 = "SELECT `quantity` FROM `panier`";
+		$result2 = mysqli_query($con, $query2) or die(mysqli_error($con));
+		$rows2 = mysqli_num_rows($result2);
+
+		$total_products = 0;
+		for ($i = 0; $i < $rows2; $i++) {
+			$total_products += mysqli_fetch_array($result2)[0];
+		}
+    ?>
+
     <header>
         <div class="hero-banner-content">
             <div class="hero-bannner-logo">
@@ -20,21 +40,12 @@
                 <a class="hero-banner-title" href="team.html">Equipe</a>
                 <a class="hero-banner-title" href="#">Support</a>
                 <a class="hero-banner-title" href="#">Feedback</a>
-                <a class="hero-banner-title hero-right" href="shopping-cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                <a class="hero-banner-title hero-right"href="../pages/shopping-cart.php"><i class="fa-solid fa-bag-shopping"></i></a>
+				<div class="red_bubble"><?php echo $total_products ?></div>
             </div>
         </div>
     </header>
 
-    <?php
-        require('db.php');
-
-        $query = "SELECT * FROM `panier`";
-        $result = mysqli_query($con, $query) or die(mysqli_error($con));
-        $rows = mysqli_num_rows($result);
-
-        $result = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        
-    ?>
     <section class="shopping-cart">
         <h1>Panier</h1>
         <hr class="shopping-cart-separator">
