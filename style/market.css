@@ -21,6 +21,7 @@ body{
     padding: 0;
     font-family: var(--main-font);
     background-color: var(--main-color);
+    width: 100%;
     overflow-x: hidden;
 }
 
