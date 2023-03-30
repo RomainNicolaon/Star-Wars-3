@@ -3,12 +3,13 @@
 :root {
     --main-color: #EEF0F4;
     --main-font: 'Inter', sans-serif;
-    --main-font-size: 40px;
+    --main-font-size: 12px;
 
     --secondary-color: #393939;
+    --secondary-font: 'Inter', sans-serif;
 
     --accent-color-1: #D9DBDF;
-    --accent-color-2: #B1F042;
+    --accent-color-2: #e7a108;
 }
 
 * {
