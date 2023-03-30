@@ -311,7 +311,35 @@ footer {
         font-size: 40%;
     }
 }
-
+@media only screen and (max-width: 768px) {
+    .container{
+        height: 110vh;
+    }
+    .container img{
+        display: none;
+    }
+    .last_drop{
+        height: fit-content;
+    }
+    .titre{
+        margin-left: 10%;
+    }
+    .titre h1{
+        font-size: 3rem;
+        text-align: left;
+    }
+    #open{
+        transform: translate(4px,0px);
+        transition: 1s ease-in-out;
+    }
+    #close{
+        position: relative;
+        transform: translateY(-200px);
+        transition: 1s ease-in-out;
+        display: inherit;
+        z-index: 42;
+    }
+  }
 @media screen and (max-width: 400px){
     .full-button input::placeholder{
         font-size: 70%;
