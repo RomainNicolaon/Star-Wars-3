@@ -93,7 +93,7 @@
 
 					$send_values = $product['name'] . "°" . $product['image'] . "°" . $product['price'];
 
-					if ($total_products <= 15) {
+					if ($total_products < 15) {
 						echo "<div class='drop'>
                             <img src='" . $product['image'] . "' alt ='" . $product['name'] . "'>
                             <p>" . $product['difficulte'] . "</p>
