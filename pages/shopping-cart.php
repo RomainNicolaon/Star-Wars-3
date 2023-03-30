@@ -32,20 +32,26 @@
     ?>
 
     <header>
-        <div class="hero-banner-content">
-            <div class="hero-bannner-logo">
-                <a href="market.html"><img src="../images/Logo.png" alt="logo"></a>
-            </div>
-            <div class="hero-banner-titles">
-                <a class="hero-banner-title" href="market.php">Produits</a>
-                <a class="hero-banner-title" href="team.html">Equipe</a>
-                <a class="hero-banner-title" href="#">Support</a>
-                <a class="hero-banner-title" href="#">Feedback</a>
-                <a class="hero-banner-title hero-right"href="../pages/shopping-cart.php"><i class="fa-solid fa-bag-shopping"></i></a>
+		<div class="hero-banner-content">
+			<div class="hero-bannner-logo">
+				<img src="../images/Logo.png" alt="logo">
+			</div>
+			<div class="menu">
+				<i class="fa-solid fa-bars" id="open" onclick="navbar_open()"></i>
+				<i class="fa-solid fa-xmark" id="close" onclick="navbar_close()"></i>
+			</div>
+			<div class="hero-banner-titles">
+				<a class="hero-banner-title" href="../pages/market.php">Produits</a>
+				<a class="hero-banner-title" href="../pages/team.html">Equipe</a>
+				<a class="hero-banner-title">Support</a>
+				<a class="hero-banner-title">Feedback</a>
+				<a class="hero-banner-title hero-right"href="../pages/shopping-cart.php"><i class="fa-solid fa-bag-shopping"></i></a>
 				<div class="red_bubble"><?php echo $total_products ?></div>
-            </div>
-        </div>
-    </header>
+				
+
+			</div>
+		</div>
+	</header>
 
     <section class="shopping-cart">
         <h1>Panier</h1>
@@ -171,5 +177,6 @@
             <p>© 2023 Cefim. Tous droits réservés.</p>
         </div>
     </footer>
+    <script src="../script/main.js"></script>
 </body>
 </html>
