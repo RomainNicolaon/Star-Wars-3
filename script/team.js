@@ -1,25 +1,25 @@
 data_area = document.querySelector('.equipe-membre');
 var membres = [
     {
-        image: "/images/icon/user6.png",
+        image: "../images/icon/user6.png",
         name: "Romain",
         email: "romain.maitrephp@cefim.com",
         description: "Désigné maitre PHP par la Super Team"
     },
     {
-        image: "/images/icon/user9.png",
+        image: "../images/icon/user9.png",
         name: "Titouan",
         email: "titouan.expertdesign@cefim.com",
         description: "Expert du design, mention spécial binôme PHP"
     },
     {
-        image: "/images/icon/user4.png",
+        image: "../images/icon/user4.png",
         name: "Athénaïs",
         email: "athenais.passionjs@cefim.com",
         description: "S'est découvert une affinité avec le JavaScript, n'a pas cédé aux avances du PHP"
     },
     {
-        image: "/images/icon/user1.png",
+        image: "../images/icon/user1.png",
         name: "Name",
         email: "rejoignezlecefim@cefim.com",
         description: "Member 1 description"
@@ -39,7 +39,7 @@ function allMembers() {
                     <div class="name">${membre.name}</div>
                     <div class="email">${membre.email}</div>
                     <div class="description">${membre.description}</div>
-                    <button type="submit" id="button_less" onclick="this.parentElement.remove()"><img  src="/images/trash-solid.svg" class="trashImg" alt"supprimer"/></button>
+                    <button type="submit" id="button_less" onclick="this.parentElement.remove()"><img  src="../images/trash-solid.svg" class="trashImg" alt"supprimer"/></button>
                 </div>`;
                 
     });
@@ -106,7 +106,7 @@ function addMember() {
         <div class="name">${name}</div>
         <div class="email">${email}</div>
         <div class="description">${description}</div>
-        <button type="submit" id="button_less" onclick="this.parentElement.remove()"><img src="/images/trash-solid.svg" class="trashImg"  alt"supprimer"/></button>
+        <button type="submit" id="button_less" onclick="this.parentElement.remove()"><img src="../images/trash-solid.svg" class="trashImg"  alt"supprimer"/></button>
     </div>`;
 
 };

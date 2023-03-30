@@ -13,6 +13,25 @@
 </head>
 
 <body>
+<?php
+
+require('db.php');
+
+$query = "SELECT * FROM `panier`";
+$result = mysqli_query($con, $query) or die(mysqli_error($con));
+$rows = mysqli_num_rows($result);
+
+$result = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+$query2 = "SELECT `quantity` FROM `panier`";
+$result2 = mysqli_query($con, $query2) or die(mysqli_error($con));
+$rows2 = mysqli_num_rows($result2);
+
+$total_products = 0;
+for ($i = 0; $i < $rows2; $i++) {
+    $total_products += mysqli_fetch_array($result2)[0];
+}
+?>
     <header>
 		<div class="hero-banner-content">
 			<div class="hero-bannner-logo">
@@ -66,28 +85,28 @@
 
                 <div class="image-container">
                     <input type="radio" id="imageProfile1" name="radioChoice" value="/images/icon/user1.png">
-                    <label for="imageProfile1"><img src="/images/icon/user1.png" class="iconRadio" alt="user1"></label>
+                    <label for="imageProfile1"><img src="../images/icon/user1.png" class="iconRadio" alt="user1"></label>
                 </div>
                 <div class="image-container">
                     <input type="radio" id="imageProfile3" name="radioChoice" value="/images/icon/user3.png">
-                    <label for="imageProfile3"><img src="/images/icon/user3.png" class="iconRadio" alt="user3"></label>
+                    <label for="imageProfile3"><img src="../images/icon/user3.png" class="iconRadio" alt="user3"></label>
                 </div>
                 <div class="image-container">
                     <input type="radio" id="imageProfile4" name="radioChoice" value="/images/icon/user4.png">
-                    <label for="imageProfile4"><img src="/images/icon/user4.png" class="iconRadio" alt="user4"></label>
+                    <label for="imageProfile4"><img src="../images/icon/user4.png" class="iconRadio" alt="user4"></label>
                 </div>
                 <div class="image-container">
                     <input type="radio" id="imageProfile6" name="radioChoice" value="/images/icon/user6.png">
-                    <label for="imageProfile6"><img src="/images/icon/user6.png" class="iconRadio" alt="user6"></label>
+                    <label for="imageProfile6"><img src="../images/icon/user6.png" class="iconRadio" alt="user6"></label>
                 </div>
                 <div class="image-container">
 
                     <input type="radio" id="imageProfile7" name="radioChoice" value="/images/icon/user7.png">
-                    <label for="imageProfile7"><img src="/images/icon/user7.png" class="iconRadio" alt="user7"></label>
+                    <label for="imageProfile7"><img src="../images/icon/user7.png" class="iconRadio" alt="user7"></label>
                 </div>
                 <div class="image-container">
                     <input type="radio" id="imageProfile10" name="radioChoice" value="/images/icon/user10.png">
-                    <label for="imageProfile10"><img src="/images/icon/user10.png" class="iconRadio" alt="user10"></label>
+                    <label for="imageProfile10"><img src="../images/icon/user10.png" class="iconRadio" alt="user10"></label>
                 </div>
             </div>
 
@@ -117,7 +136,7 @@
             <p>© 2023 Cefim. Tous droits réservés.</p>
         </div>
     </footer>
-    <script src="/script/team.js"></script>
+    <script src="../script/team.js"></script>
 </body>
 
 
