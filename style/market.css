@@ -221,6 +221,7 @@ footer{
     }
     #open{
         transform: translate(4px,0px);
+        transition: 1s ease-in-out;
     }
     #close{
         transform: translateY(-200px);
