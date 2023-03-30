@@ -118,14 +118,25 @@
                         </div>
                         <div class='product-price'>
                             <h3>Prix : " . $product['price'] . " €</h3>
-                        </div>
-                        <div class='product-quantity'>
-                            <h3>Quantité : " . $product['quantity'] . "<a class='add_product' href='shopping-cart.php?add=" . $product['id'] . "'><i class='fa-solid fa-plus'></i></a><a class='del_product' href='shopping-cart.php?del=" . $product['id'] . "'><i class='fa-solid fa-minus'></i></a></h3>
-                        </div>
-                        <div class='product-remove'>
-                        <a href='shopping-cart.php?id=" . $product['id'] . "'><button class='remove-article'>Remove <i class='fa-solid fa-trash'></i></button></a>
-                        </div>
-                    </div>";
+                        </div>";
+                    
+                    if ($total_products < 15) {
+                        echo "<div class='product-quantity'>
+                                <h3>Quantité : " . $product['quantity'] . "<a class='add_product' href='shopping-cart.php?add=" . $product['id'] . "'><i class='fa-solid fa-plus'></i></a><a class='del_product' href='shopping-cart.php?del=" . $product['id'] . "'><i class='fa-solid fa-minus'></i></a></h3>
+                            </div>
+                            <div class='product-remove'>
+                            <a href='shopping-cart.php?id=" . $product['id'] . "'><button class='remove-article'>Remove <i class='fa-solid fa-trash'></i></button></a>
+                            </div>
+                        </div>";
+                    } else {
+                        echo "<div class='product-quantity'>
+                                <h3>Quantité : " . $product['quantity'] . "<a class='del_product' href='shopping-cart.php?del=" . $product['id'] . "'><i class='fa-solid fa-minus'></i></a></h3>
+                            </div>
+                            <div class='product-remove'>
+                            <a href='shopping-cart.php?id=" . $product['id'] . "'><button class='remove-article'>Remove <i class='fa-solid fa-trash'></i></button></a>
+                            </div>
+                        </div>";
+                    }
 
                     $total_price += $product['price'] * $product['quantity'];
                 }
@@ -155,6 +166,9 @@
                 }
             }
 
+            if ($total_products == 15) {
+                echo "<h2 style='color: rgb(250, 67, 67);'>Vous avez atteint le nombre maximum de 15 articles dans votre panier.</h2>";
+            }
             if ($total_price == 0) {
                 if ($rows != 0) {
                     echo "<h2 class='total-price'>Prix total : Gratuit</h2>";
