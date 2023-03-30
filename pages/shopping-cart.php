@@ -138,7 +138,23 @@
     </section>
 
     <section class="checkout">
-        <?php 
+        <?php
+
+            $query4 = "SELECT * FROM `promo`";
+            $result4 = mysqli_query($con, $query4) or die(mysqli_error($con));
+            $rows4 = mysqli_num_rows($result4);
+            $result4 = mysqli_fetch_all($result4, MYSQLI_ASSOC);
+
+            if (isset($_GET['promo'])) {
+                $promo = $_GET['promo'];
+                for ($i = 0; $i < $rows4; $i++) {
+                    $row4 = $result4[$i];
+                    if ($promo == $row4['code']) {
+                        $total_price = $total_price - ($total_price * $row4['value'] / 100); 
+                    }
+                }
+            }
+
             if ($total_price == 0) {
                 if ($rows != 0) {
                     echo "<h2 class='total-price'>Prix total : Gratuit</h2>";
@@ -146,19 +162,38 @@
                 }
             }
             else if ($total_price >= 1 && $total_price <= 50) {
+                echo "<div class='promo'>
+                    <form action='shopping-cart.php' method='GET'>
+                        <input type='text' name='promo' placeholder='Entrez votre code promo'>
+                        <button type='submit'>Valider</button>
+                    </form>
+                </div>";
                 echo "<h2 class='total-price green'>Prix total : " . $total_price . " €</h2>";
                 echo "<button class='checkout-button'>Commander</button>";
-                echo "<button class='delete-button'><a href='shopping-cart.php?delete=1'>Vider le panier</a></button>";
+                echo "<a href='shopping-cart.php?delete=1'><button class='delete-button'>Vider le panier</button></a>";
             } else if ($total_price > 51 && $total_price <= 75) {
+                echo "<div class='promo'>
+                    <form action='shopping-cart.php' method='GET'>
+                        <input type='text' name='promo' placeholder='Entrez votre code promo'>
+                        <button type='submit'>Valider</button>
+                    </form>
+                </div>";
                 echo "<h2 class='total-price orange'>Prix total : " . $total_price . " €</h2>";
                 echo "<button class='checkout-button'>Commander</button>";
-                echo "<button class='delete-button'><a href='shopping-cart.php?delete=1'>Vider le panier</a></button>";
+                echo "<a href='shopping-cart.php?delete=1'><button class='delete-button'>Vider le panier</button></a>";
             } else if ($total_price > 76) {
+                echo "<div class='promo'>
+                    <form action='shopping-cart.php' method='GET'>
+                        <input type='text' name='promo' placeholder='Entrez votre code promo'>
+                        <button type='submit'>Valider</button>
+                    </form>
+                </div>";
                 echo "<h2 class='total-price red'>Prix total : " . $total_price . " €</h2>";
                 echo "<button class='checkout-button'>Commander</button>";
-                echo "<button class='delete-button'><a href='shopping-cart.php?delete=1'>Vider le panier</a></button>";
+                echo "<a href='shopping-cart.php?delete=1'><button class='delete-button'>Vider le panier</button></a>";
             }
         ?>
+
     </section>
 
     <footer>
@@ -178,5 +213,11 @@
         </div>
     </footer>
     <script src="../script/main.js"></script>
+    <script>
+        let commanderbtn = document.querySelector(".checkout-button");
+        commanderbtn.addEventListener("click", function() {
+            alert("Votre commande a bien été prise en compte.");
+        });
+    </script>
 </body>
 </html>
