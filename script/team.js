@@ -20,9 +20,9 @@ var membres = [
     },
     {
         image: "../images/icon/user1.png",
-        name: "Name",
+        name: "Gabriel",
         email: "rejoignezlecefim@cefim.com",
-        description: "Member 1 description"
+        description: "Celui qui vous autorisera à appuyer sur ajouter ou pas"
     },
 
 ]
