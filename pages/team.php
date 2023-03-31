@@ -84,28 +84,28 @@ for ($i = 0; $i < $rows2; $i++) {
             <div id="radioAvatar">
 
                 <div class="image-container">
-                    <input type="radio" id="imageProfile1" name="radioChoice" value="/images/icon/user1.png">
+                    <input type="radio" id="imageProfile1" name="radioChoice" value="../images/icon/user1.png">
                     <label for="imageProfile1"><img src="../images/icon/user1.png" class="iconRadio" alt="user1"></label>
                 </div>
                 <div class="image-container">
-                    <input type="radio" id="imageProfile3" name="radioChoice" value="/images/icon/user3.png">
+                    <input type="radio" id="imageProfile3" name="radioChoice" value="../images/icon/user3.png">
                     <label for="imageProfile3"><img src="../images/icon/user3.png" class="iconRadio" alt="user3"></label>
                 </div>
                 <div class="image-container">
-                    <input type="radio" id="imageProfile4" name="radioChoice" value="/images/icon/user4.png">
+                    <input type="radio" id="imageProfile4" name="radioChoice" value="../images/icon/user4.png">
                     <label for="imageProfile4"><img src="../images/icon/user4.png" class="iconRadio" alt="user4"></label>
                 </div>
                 <div class="image-container">
-                    <input type="radio" id="imageProfile6" name="radioChoice" value="/images/icon/user6.png">
+                    <input type="radio" id="imageProfile6" name="radioChoice" value="../images/icon/user6.png">
                     <label for="imageProfile6"><img src="../images/icon/user6.png" class="iconRadio" alt="user6"></label>
                 </div>
                 <div class="image-container">
 
-                    <input type="radio" id="imageProfile7" name="radioChoice" value="/images/icon/user7.png">
+                    <input type="radio" id="imageProfile7" name="radioChoice" value="../images/icon/user7.png">
                     <label for="imageProfile7"><img src="../images/icon/user7.png" class="iconRadio" alt="user7"></label>
                 </div>
                 <div class="image-container">
-                    <input type="radio" id="imageProfile10" name="radioChoice" value="/images/icon/user10.png">
+                    <input type="radio" id="imageProfile10" name="radioChoice" value="../images/icon/user10.png">
                     <label for="imageProfile10"><img src="../images/icon/user10.png" class="iconRadio" alt="user10"></label>
                 </div>
             </div>
