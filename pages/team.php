@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="../style/team.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">  
-
+    <link rel="icon" href="../images/fav-icon.png">s
 </head>
 
 <body>

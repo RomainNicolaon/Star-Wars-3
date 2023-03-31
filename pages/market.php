@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../style/main.css">
 	<link rel="stylesheet" href="../style/market.css">
+	<link rel="icon" href="../images/fav-icon.png">
 	<title>FastDev</title>
 </head>
 <body>
