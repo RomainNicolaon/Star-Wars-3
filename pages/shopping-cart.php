@@ -108,18 +108,35 @@
                         "quantity" => $row['quantity']
                     );
 
-                    echo "<div class='product'>
-                        <div class='product-image'>
-                            <img src='" . $product['image'] . "' alt='" . $product['name'] . "'>
-                        </div>
-                        <div class='product-info'>
-                            <h2>" . $product['name'] . "</h2>
-                            <p>" . $product['description'] . "</p>
-                        </div>
-                        <div class='product-price'>
-                            <h3>Prix : " . $product['price'] . " €</h3>
-                        </div>";
-                    
+                    if ($product['quantity'] >= 3) {
+                        $anciant_price = $product['price'];
+                        $product['price'] = $product['price'] * 0.8;
+
+                        echo "<div class='product'>
+                            <div class='product-image'>
+                                <img src='" . $product['image'] . "' alt='" . $product['name'] . "'>
+                            </div>
+                            <div class='product-info'>
+                                <h2>" . $product['name'] . "</h2>
+                                <p>" . $product['description'] . "</p>
+                            </div>
+                            <div class='product-price'>
+                                <h3>Prix : <span style='color: red';>" . $product['price'] . " € </span><del>" . $anciant_price . " €</del></h3>
+                            </div>";
+                    } else {
+                        echo "<div class='product'>
+                            <div class='product-image'>
+                                <img src='" . $product['image'] . "' alt='" . $product['name'] . "'>
+                            </div>
+                            <div class='product-info'>
+                                <h2>" . $product['name'] . "</h2>
+                                <p>" . $product['description'] . "</p>
+                            </div>
+                            <div class='product-price'>
+                                <h3>Prix : " . $product['price'] . " €</h3>
+                            </div>";
+                    }
+                
                     if ($total_products < 15) {
                         echo "<div class='product-quantity'>
                                 <h3>Quantité : " . $product['quantity'] . "<a class='add_product' href='shopping-cart.php?add=" . $product['id'] . "'><i class='fa-solid fa-plus'></i></a><a class='del_product' href='shopping-cart.php?del=" . $product['id'] . "'><i class='fa-solid fa-minus'></i></a></h3>
